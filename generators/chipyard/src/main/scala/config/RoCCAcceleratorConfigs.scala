@@ -62,3 +62,8 @@ class AES256ECBRocketConfig extends Config(
   new freechips.rocketchip.subsystem.WithNBigCores(1) ++
   new chipyard.config.WithSystemBusWidth(256) ++
   new chipyard.config.AbstractConfig)
+
+class HellaCrashRocketConfig extends Config(
+  new hellacrash.WithHellaCrash ++
+  new freechips.rocketchip.subsystem.WithNBigCores(1) ++
+  new chipyard.config.AbstractConfig)

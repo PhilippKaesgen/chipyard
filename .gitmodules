@@ -148,3 +148,6 @@
 [submodule "generators/rocket-chip-inclusive-cache"]
 	path = generators/rocket-chip-inclusive-cache
 	url = https://github.com/chipsalliance/rocket-chip-inclusive-cache.git
+[submodule "generators/hella-crash"]
+	path = generators/hella-crash
+	url = https://github.com/PhilippKaesgen/hella-crash

@@ -150,6 +150,7 @@ lazy val chipyard = (project in file("generators/chipyard"))
     sha3, // On separate line to allow for cleaner tutorial-setup patches
     dsptools, rocket_dsp_utils,
     gemmini, icenet, tracegen, cva6, nvdla, sodor, ibex, fft_generator,
+    hella_crash,
     constellation, mempress, barf, shuttle, caliptra_aes)
   .settings(libraryDependencies ++= rocketLibDeps.value)
   .settings(
@@ -176,6 +177,11 @@ lazy val constellation = (project in file("generators/constellation"))
 
 lazy val fft_generator = (project in file("generators/fft-generator"))
   .dependsOn(rocketchip, rocket_dsp_utils)
+  .settings(libraryDependencies ++= rocketLibDeps.value)
+  .settings(commonSettings)
+
+lazy val hella_crash = (project in file("generators/hella-crash"))
+  .dependsOn(rocketchip)
   .settings(libraryDependencies ++= rocketLibDeps.value)
   .settings(commonSettings)
 
