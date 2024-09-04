@@ -71,3 +71,9 @@ class ZstdCompressorRocketConfig extends Config(
   new compressacc.WithZstdCompressor ++
   new freechips.rocketchip.rocket.WithNHugeCores(1) ++
   new chipyard.config.AbstractConfig)
+
+class HellaCrashRocketConfig extends Config(
+  new hellacrash.WithHellaCrash ++
+  new freechips.rocketchip.rocket.WithNHugeCores(1) ++
+  new chipyard.config.AbstractConfig)
+)

@@ -28,6 +28,9 @@
 [submodule "generators/hardfloat"]
 	path = generators/hardfloat
 	url = https://github.com/ucb-bar/berkeley-hardfloat.git
+[submodule "generators/hella-crash"]
+  path = generators/hella-cash
+  url = https://github.com/PhilippKaesgen/hella-crash.git
 [submodule "generators/ibex"]
 	path = generators/ibex
 	url = https://github.com/ucb-bar/ibex-wrapper.git

@@ -157,7 +157,7 @@ lazy val chipyard = (project in file("generators/chipyard"))
   .dependsOn(testchipip, rocketchip, boom, rocketchip_blocks, rocketchip_inclusive_cache,
     dsptools, rocket_dsp_utils,
     gemmini, icenet, tracegen, cva6, nvdla, sodor, ibex, fft_generator,
-    constellation, mempress, barf, shuttle, caliptra_aes, rerocc,
+    constellation, mempress, barf, shuttle, caliptra_aes, rerocc, hella_crash,
     compressacc, saturn, ara, firrtl2_bridge)
   .settings(libraryDependencies ++= rocketLibDeps.value)
   .settings(
@@ -255,6 +255,11 @@ lazy val caliptra_aes = (project in file("generators/caliptra-aes-acc"))
 
 lazy val rerocc = (project in file("generators/rerocc"))
   .dependsOn(rocketchip, constellation, boom, shuttle)
+  .settings(libraryDependencies ++= rocketLibDeps.value)
+  .settings(commonSettings)
+
+lazy val hella_crash = (project in file("generators/hella-crash"))
+  .depensOn(rocketchip)
   .settings(libraryDependencies ++= rocketLibDeps.value)
   .settings(commonSettings)
 
