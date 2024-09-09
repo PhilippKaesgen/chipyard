@@ -174,6 +174,7 @@ val stageDir = if (chisel6) "tools/stage/src/main/scala" else "tools/stage-chise
 lazy val chipyard = (project in file("generators/chipyard"))
   .dependsOn(testchipip, rocketchip, boom, rocketchip_blocks, rocketchip_inclusive_cache,
     dsptools, rocket_dsp_utils,
+    hiprep,
     gemmini, icenet, tracegen, cva6, nvdla, sodor, ibex, fft_generator,
     constellation, mempress, barf, shuttle, caliptra_aes, rerocc,
     compressacc, saturn, ara)
@@ -356,4 +357,9 @@ lazy val fpga_shells = (project in file("./fpga/fpga-shells"))
 
 lazy val chipyard_fpga = (project in file("./fpga"))
   .dependsOn(chipyard, fpga_shells)
+  .settings(commonSettings)
+
+lazy val hiprep = (project in file("generators/hiprep"))
+  .dependsOn(rocketchip, hardfloat)
+  .settings(libraryDependencies ++= rocketLibDeps.value)
   .settings(commonSettings)
