@@ -157,3 +157,7 @@
 [submodule "generators/ara"]
 	path = generators/ara
 	url = https://github.com/ucb-bar/ara-wrapper.git
+[submodule "generators/hiprep"]
+	path = generators/hiprep
+	url = git@github.com:PhilippKaesgen/hiprep.git
+	branch = 1.12.3
