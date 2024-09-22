@@ -133,3 +133,6 @@
 [submodule "generators/mempress"]
 	path = generators/mempress
 	url = https://github.com/ucb-bar/mempress.git
+[submodule "generators/hiprep"]
+	path = generators/hiprep
+	url = git@github.com:PhilippKaesgen/hiprep.git
