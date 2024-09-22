@@ -145,7 +145,7 @@ lazy val testchipip = (project in file("generators/testchipip"))
   .settings(commonSettings)
 
 lazy val chipyard = (project in file("generators/chipyard"))
-  .dependsOn(testchipip, rocketchip, boom, hwacha, sifive_blocks, sifive_cache, iocell,
+  .dependsOn(testchipip, rocketchip, boom, hwacha, hiprep, sifive_blocks, sifive_cache, iocell,
     sha3, // On separate line to allow for cleaner tutorial-setup patches
     dsptools, `rocket-dsp-utils`,
     gemmini, icenet, tracegen, cva6, nvdla, sodor, ibex, fft_generator,
@@ -292,4 +292,9 @@ lazy val fpga_shells = (project in file("./fpga/fpga-shells"))
 
 lazy val fpga_platforms = (project in file("./fpga"))
   .dependsOn(chipyard, fpga_shells)
+  .settings(commonSettings)
+
+lazy val hiprep = (project in file("generators/hiprep"))
+  .dependsOn(rocketchip, hardfloat)
+  .settings(libraryDependencies ++= rocketLibDeps.value)
   .settings(commonSettings)

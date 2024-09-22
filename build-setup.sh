@@ -90,6 +90,7 @@ $RDIR/scripts/init-submodules-no-riscv-tools.sh $FORCE_FLAG
 if [ "$SKIP_TOOLCHAIN" = false ]; then
     $RDIR/scripts/build-toolchain-extra.sh $FORCE_FLAG $TOOLCHAIN
 fi
+mv generators/hiprep/SimpleHellaCacheIF.scala generators/rocket-chip/src/main/scala/rocket
 
 $RDIR/scripts/gen-tags.sh
 
